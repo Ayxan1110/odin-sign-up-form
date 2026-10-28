@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  color: #111827;
+  background-color: #f9fafb;
+}
+
+/* ---------- Left side ---------- */
+.side {
+  flex: 0 0 37%;
+  /* stays as tall as the window so the credit is always visible */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Fern_Leaf_%28Unsplash%29.jpg/1280px-Fern_Leaf_%28Unsplash%29.jpg");
+  background-size: cover;
+  background-position: 12% center;
+  background-color: #0f1d12;
+}
+
+/* dark, semi-transparent band so the logo is readable on the photo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 36px 20px;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+}
+
+.logo-icon {
+  width: 64px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.logo-text {
+  font-family: "Cinzel", serif;
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.credit {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
+
+.credit a {
+  color: white;
+}
+
+/* ---------- Right side ---------- */
+.content {
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.intro {
+  padding: 90px 40px 40px 48px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.intro p {
+  max-width: 700px;
+  margin: 0 0 24px;
+}
+
+/* the white band with the inputs */
+.form-box {
+  padding: 24px 40px 40px 48px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.form-box h2 {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 70px;
+  max-width: 600px;
+}
+
+.field {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+input {
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 3px;
+  background-color: #f9fafb;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1d3fa8;
+  box-shadow: 0 0 4px rgba(29, 63, 168, 0.5);
+}
+
+/* red only after the user has touched the field (not on page load) */
+input:user-invalid {
+  border-color: #9b1c1c;
+}
+
+/* fallback for older browsers: script.js adds the "touched" class on blur */
+@supports not selector(:user-invalid) {
+  input.touched:invalid {
+    border-color: #9b1c1c;
+  }
+}
+
+.actions {
+  padding: 32px 40px 40px 48px;
+}
+
+button {
+  width: 236px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  background-color: #596d48;
+  color: white;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #4a5c3b;
+}
+
+.actions p {
+  margin: 28px 0 0;
+  font-size: 18px;
+}
+
+.actions a {
+  color: #596d48;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
